@@ -1,17 +1,276 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<title>Travel Japan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philippine Tour in Japan | フィリピン観光 | 菲律宾游客日本包车</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #fef9f0;
+            color: #2c3e2f;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        /* 语言切换按钮 */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .lang-btn {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .lang-btn:hover {
+            background: #d35400;
+        }
+        /* 导航栏 */
+        nav {
+            background: #2c3e2f;
+            color: white;
+            padding: 15px 0;
+            border-radius: 40px;
+            margin-bottom: 30px;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 40px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        /* 内容区块 */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x600/?japan,cherry-blossom') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: auto;
+        }
+        .btn {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 12px 30px;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: bold;
+        }
+        .services {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        .card {
+            background: white;
+            flex: 1;
+            padding: 25px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .card h3 {
+            color: #e67e22;
+            margin-bottom: 15px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background: #2c3e2f;
+            color: white;
+            border-radius: 30px;
+        }
+        @media (max-width: 768px) {
+            nav ul { gap: 20px; flex-wrap: wrap; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
+<body>
+<div class="container">
+    <!-- 语言切换按钮 -->
+    <div class="lang-switch">
+        <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
+        <button class="lang-btn" onclick="setLanguage('en')">English</button>
+        <button class="lang-btn" onclick="setLanguage('zh')">中文</button>
+    </div>
 
-<body style="text-align:center; font-family:Arial;">
-<h1>🌏 Japan Travel Service</h1>
-<p>Welcome! Book your Japan trip easily.</p >
+    <!-- 导航栏（多语言内容由js填充） -->
+    <nav>
+        <ul>
+            <li><a href=" " data-key="nav_home">首页</a ></li>
+            <li><a href="#" data-key="nav_destinations">目的地</a ></li>
+            <li><a href="#" data-key="nav_contact">联系我们</a ></li>
+        </ul>
+    </nav>
 
-<a href="ph.html">🇵🇭 For Philippines Customers</a ><br><br>
-  
-<a href="jp.html">🇯🇵 For Japan Partners</a >
+    <!-- 主视觉 -->
+    <div class="hero">
+        <h1 data-key="hero_title">日本包车旅游</h1>
+        <p data-key="hero_sub">专为菲律宾游客定制 · 安全舒适 · 经验丰富的司机</p >
+        <a href="#" class="btn" data-key="hero_btn">立即咨询</a >
+    </div>
 
+    <!-- 服务介绍 -->
+    <h2 data-key="services_title" style="text-align:center; margin:20px 0;">我们的服务</h2>
+    <div class="services">
+        <div class="card">
+            <h3 data-key="service1_title">🚐 私人包车</h3>
+            <p data-key="service1_desc">提供5座/7座/10座车辆，满足家庭或团体需求。全程空调，宽敞舒适。</p >
+        </div>
+        <div class="card">
+            <h3 data-key="service2_title">🗾 经验丰富</h3>
+            <p data-key="service2_desc">从业15年以上，熟悉日本各地景点，安全第一，服务周到。</p >
+        </div>
+        <div class="card">
+            <h3 data-key="service3_title">🇵🇭 菲律宾游客专属</h3>
+            <p data-key="service3_desc">我们理解菲律宾文化，提供他加禄语/英语/日语/中文服务，沟通无障碍。</p >
+        </div>
+    </div>
+
+    <!-- 为什么选择我们 -->
+    <div style="background:#fff3e0; border-radius:30px; padding:30px; margin:40px 0;">
+        <h2 data-key="why_title" style="text-align:center;">为什么选择我们？</h2>
+        <ul style="margin-top:20px; list-style:none; display:flex; flex-wrap:wrap; gap:15px; justify-content:center;">
+            <li style="background:white; padding:10px 20px; border-radius:40px;">✅ <span data-key="why1">10年以上包车经验</span></li>
+            <li style="background:white; padding:10px 20px; border-radius:40px;">✅ <span data-key="why2">合法绿牌车辆 · 全额保险</span></li>
+            <li style="background:white; padding:10px 20px; border-radius:40px;">✅ <span data-key="why3">24小时客服支持</span></li>
+            <li style="background:white; padding:10px 20px; border-radius:40px;">✅ <span data-key="why4">可定制东京/大阪/富士山/北海道路线</span></li>
+        </ul>
+    </div>
+
+    <footer>
+        <p data-key="footer">© 2025 日本快乐包车旅行 | 为菲律宾朋友打造安心的日本之旅</p >
+    </footer>
+</div>
+
+<script>
+    // 多语言字典
+    const translations = {
+        zh: {
+            nav_home: "首页",
+            nav_destinations: "目的地",
+            nav_contact: "联系我们",
+            hero_title: "日本包车旅游",
+            hero_sub: "专为菲律宾游客定制 · 安全舒适 · 经验丰富的司机",
+            hero_btn: "立即咨询",
+            services_title: "我们的服务",
+            service1_title: "🚐 私人包车",
+            service1_desc: "提供5座/7座/10座车辆，满足家庭或团体需求。全程空调，宽敞舒适。",
+            service2_title: "🗾 经验丰富",
+            service2_desc: "从业15年以上，熟悉日本各地景点，安全第一，服务周到。",
+            service3_title: "🇵🇭 菲律宾游客专属",
+            service3_desc: "我们理解菲律宾文化，提供他加禄语/英语/日语/中文服务，沟通无障碍。",
+            why_title: "为什么选择我们？",
+            why1: "10年以上包车经验",
+            why2: "合法绿牌车辆 · 全额保险",
+            why3: "24小时客服支持",
+            why4: "可定制东京/大阪/富士山/北海道路线",
+            footer: "© 2025 日本快乐包车旅行 | 为菲律宾朋友打造安心的日本之旅"
+        },
+        en: {
+            nav_home: "Home",
+            nav_destinations: "Destinations",
+            nav_contact: "Contact",
+            hero_title: "Japan Charter Tours",
+            hero_sub: "Tailored for Filipino travelers · Safe & Comfortable · Experienced Drivers",
+            hero_btn: "Inquire Now",
+            services_title: "Our Services",
+            service1_title: "🚐 Private Charter",
+            service1_desc: "5/7/10-seater vehicles available for families or groups. Air-conditioned and spacious.",
+            service2_title: "🗾 Experienced",
+            service2_desc: "Over 15 years of experience, familiar with all Japan attractions. Safety first.",
+            service3_title: "🇵🇭 Filipino-Friendly",
+            service3_desc: "We understand Filipino culture. Support in Tagalog/English/Japanese/Chinese.",
+            why_title: "Why Choose Us?",
+            why1: "10+ years charter experience",
+            why2: "Licensed Green-plate vehicles · Full insurance",
+            why3: "24/7 customer support",
+            why4: "Custom routes: Tokyo/Osaka/Fuji/Hokkaido",
+            footer: "© 2025 Happy Charter Japan | Safe & enjoyable Japan tour for Filipino friends"
+        },
+        ja: {
+            nav_home: "ホーム",
+            nav_destinations: "目的地",
+            nav_contact: "お問い合わせ",
+            hero_title: "日本チャーター旅行",
+            hero_sub: "フィリピン人旅行者向け・安全・快適・経験豊富なドライバー",
+            hero_btn: "今すぐお問い合わせ",
+            services_title: "サービス",
+            service1_title: "🚐 プライベートチャーター",
+            service1_desc: "5/7/10人乗り車両。ファミリーやグループに最適。快適な空調車。",
+            service2_title: "🗾 豊富な経験",
+            service2_desc: "15年以上の経験。日本の観光地を熟知。安全第一。",
+            service3_title: "🇵🇭 フィリピン人観光客向け",
+            service3_desc: "フィリピンの文化を理解。タガログ語・英語・日本語・中国語対応。",
+            why_title: "選ばれる理由",
+            why1: "10年以上のチャーター経験",
+            why2: "緑ナンバー車・フル保険",
+            why3: "24時間サポート",
+            why4: "東京・大阪・富士山・北海道 ルートカスタム可能",
+            footer: "© 2025 ハッピーチャータージャパン | フィリピンの友人のための安心な日本旅行"
+        }
+    };
+
+    let currentLang = 'zh'; // 默认中文
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        // 更新所有带有 data-key 属性的元素
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (translations[lang][key]) {
+                el.innerText = translations[lang][key];
+            }
+        });
+        // 保存语言偏好到 localStorage
+        localStorage.setItem('travel_site_lang', lang);
+    }
+
+    // 页面加载时读取上次选择的语言
+    const savedLang = localStorage.getItem('travel_site_lang');
+    if (savedLang && translations[savedLang]) {
+        setLanguage(savedLang);
+    } else {
+        setLanguage('zh');
+    }
+</script>
 </body>
 </html>
