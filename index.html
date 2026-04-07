@@ -21,7 +21,6 @@
             margin: auto;
             padding: 20px;
         }
-        /* 语言切换按钮 */
         .lang-switch {
             text-align: right;
             margin-bottom: 20px;
@@ -40,7 +39,6 @@
         .lang-btn:hover {
             background: #d35400;
         }
-        /* 导航栏 */
         nav {
             background: #2c3e2f;
             color: white;
@@ -63,7 +61,6 @@
         nav a:hover {
             text-decoration: underline;
         }
-        /* 内容区块 */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x600/?japan,cherry-blossom') center/cover;
             color: white;
@@ -109,6 +106,18 @@
             color: #e67e22;
             margin-bottom: 15px;
         }
+        .contact-info {
+            background: #fff3e0;
+            border-radius: 30px;
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .contact-info a {
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: bold;
+        }
         footer {
             text-align: center;
             margin-top: 50px;
@@ -125,47 +134,48 @@
 </head>
 <body>
 <div class="container">
-    <!-- 语言切换按钮 -->
     <div class="lang-switch">
         <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
         <button class="lang-btn" onclick="setLanguage('en')">English</button>
         <button class="lang-btn" onclick="setLanguage('zh')">中文</button>
     </div>
 
-    <!-- 导航栏（多语言内容由js填充） -->
     <nav>
         <ul>
-            <li><a href=" " data-key="nav_home">首页</a ></li>
-            <li><a href="#" data-key="nav_destinations">目的地</a ></li>
-            <li><a href="#" data-key="nav_contact">联系我们</a ></li>
+            <li><a href="index.html" data-key="nav_home">首页</a></li>
+            <li><a href="destinations.html" data-key="nav_destinations">目的地</a></li>
+            <li><a href="#" data-key="nav_contact">联系我们</a></li>
         </ul>
     </nav>
 
-    <!-- 主视觉 -->
     <div class="hero">
         <h1 data-key="hero_title">日本包车旅游</h1>
-        <p data-key="hero_sub">专为菲律宾游客定制 · 安全舒适 · 经验丰富的司机</p >
-        <a href="#" class="btn" data-key="hero_btn">立即咨询</a >
+        <p data-key="hero_sub">专为菲律宾游客定制 · 安全舒适 · 经验丰富的司机</p>
+        <a href="mailto:ywx822298@gmail.com" class="btn" data-key="hero_btn">邮件咨询</a>
     </div>
 
-    <!-- 服务介绍 -->
     <h2 data-key="services_title" style="text-align:center; margin:20px 0;">我们的服务</h2>
     <div class="services">
         <div class="card">
             <h3 data-key="service1_title">🚐 私人包车</h3>
-            <p data-key="service1_desc">提供5座/7座/10座车辆，满足家庭或团体需求。全程空调，宽敞舒适。</p >
+            <p data-key="service1_desc">提供5座/7座/10座车辆，满足家庭或团体需求。全程空调，宽敞舒适。</p>
         </div>
         <div class="card">
             <h3 data-key="service2_title">🗾 经验丰富</h3>
-            <p data-key="service2_desc">从业15年以上，熟悉日本各地景点，安全第一，服务周到。</p >
+            <p data-key="service2_desc">从业15年以上，熟悉日本各地景点，安全第一，服务周到。</p>
         </div>
         <div class="card">
             <h3 data-key="service3_title">🇵🇭 菲律宾游客专属</h3>
-            <p data-key="service3_desc">我们理解菲律宾文化，提供他加禄语/英语/日语/中文服务，沟通无障碍。</p >
+            <p data-key="service3_desc">我们理解菲律宾文化，提供他加禄语/英语/日语/中文服务，沟通无障碍。</p>
         </div>
     </div>
 
-    <!-- 为什么选择我们 -->
+    <!-- 联系方式区块 -->
+    <div class="contact-info">
+        <p>📞 <strong data-key="contact_phone">电话 / WhatsApp：</strong> <a href="tel:+8108088833615">080-8883-3615</a></p>
+        <p>✉️ <strong data-key="contact_email">邮箱：</strong> <a href="mailto:ywx822298@gmail.com">ywx822298@gmail.com</a></p>
+    </div>
+
     <div style="background:#fff3e0; border-radius:30px; padding:30px; margin:40px 0;">
         <h2 data-key="why_title" style="text-align:center;">为什么选择我们？</h2>
         <ul style="margin-top:20px; list-style:none; display:flex; flex-wrap:wrap; gap:15px; justify-content:center;">
@@ -177,12 +187,11 @@
     </div>
 
     <footer>
-        <p data-key="footer">© 2025 日本快乐包车旅行 | 为菲律宾朋友打造安心的日本之旅</p >
+        <p data-key="footer">© 2025 日本快乐包车旅行 | 为菲律宾朋友打造安心的日本之旅</p>
     </footer>
 </div>
 
 <script>
-    // 多语言字典
     const translations = {
         zh: {
             nav_home: "首页",
@@ -190,7 +199,7 @@
             nav_contact: "联系我们",
             hero_title: "日本包车旅游",
             hero_sub: "专为菲律宾游客定制 · 安全舒适 · 经验丰富的司机",
-            hero_btn: "立即咨询",
+            hero_btn: "邮件咨询",
             services_title: "我们的服务",
             service1_title: "🚐 私人包车",
             service1_desc: "提供5座/7座/10座车辆，满足家庭或团体需求。全程空调，宽敞舒适。",
@@ -203,6 +212,8 @@
             why2: "合法绿牌车辆 · 全额保险",
             why3: "24小时客服支持",
             why4: "可定制东京/大阪/富士山/北海道路线",
+            contact_phone: "电话 / WhatsApp：",
+            contact_email: "邮箱：",
             footer: "© 2025 日本快乐包车旅行 | 为菲律宾朋友打造安心的日本之旅"
         },
         en: {
@@ -211,7 +222,7 @@
             nav_contact: "Contact",
             hero_title: "Japan Charter Tours",
             hero_sub: "Tailored for Filipino travelers · Safe & Comfortable · Experienced Drivers",
-            hero_btn: "Inquire Now",
+            hero_btn: "Email Inquiry",
             services_title: "Our Services",
             service1_title: "🚐 Private Charter",
             service1_desc: "5/7/10-seater vehicles available for families or groups. Air-conditioned and spacious.",
@@ -224,6 +235,8 @@
             why2: "Licensed Green-plate vehicles · Full insurance",
             why3: "24/7 customer support",
             why4: "Custom routes: Tokyo/Osaka/Fuji/Hokkaido",
+            contact_phone: "Phone / WhatsApp:",
+            contact_email: "Email:",
             footer: "© 2025 Happy Charter Japan | Safe & enjoyable Japan tour for Filipino friends"
         },
         ja: {
@@ -232,7 +245,7 @@
             nav_contact: "お問い合わせ",
             hero_title: "日本チャーター旅行",
             hero_sub: "フィリピン人旅行者向け・安全・快適・経験豊富なドライバー",
-            hero_btn: "今すぐお問い合わせ",
+            hero_btn: "メール問い合わせ",
             services_title: "サービス",
             service1_title: "🚐 プライベートチャーター",
             service1_desc: "5/7/10人乗り車両。ファミリーやグループに最適。快適な空調車。",
@@ -245,26 +258,25 @@
             why2: "緑ナンバー車・フル保険",
             why3: "24時間サポート",
             why4: "東京・大阪・富士山・北海道 ルートカスタム可能",
+            contact_phone: "電話 / WhatsApp：",
+            contact_email: "メール：",
             footer: "© 2025 ハッピーチャータージャパン | フィリピンの友人のための安心な日本旅行"
         }
     };
 
-    let currentLang = 'zh'; // 默认中文
+    let currentLang = 'zh';
 
     function setLanguage(lang) {
         currentLang = lang;
-        // 更新所有带有 data-key 属性的元素
         document.querySelectorAll('[data-key]').forEach(el => {
             const key = el.getAttribute('data-key');
             if (translations[lang][key]) {
                 el.innerText = translations[lang][key];
             }
         });
-        // 保存语言偏好到 localStorage
         localStorage.setItem('travel_site_lang', lang);
     }
 
-    // 页面加载时读取上次选择的语言
     const savedLang = localStorage.getItem('travel_site_lang');
     if (savedLang && translations[savedLang]) {
         setLanguage(savedLang);
