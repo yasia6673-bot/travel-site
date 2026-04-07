@@ -132,6 +132,18 @@
             font-weight: bold;
             margin-top: 20px;
         }
+        .contact-info {
+            background: #fff3e0;
+            border-radius: 30px;
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .contact-info a {
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: bold;
+        }
         footer {
             text-align: center;
             margin-top: 50px;
@@ -149,14 +161,12 @@
 </head>
 <body>
 <div class="container">
-    <!-- 语言切换 -->
     <div class="lang-switch">
         <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
         <button class="lang-btn" onclick="setLanguage('en')">English</button>
         <button class="lang-btn" onclick="setLanguage('zh')">中文</button>
     </div>
 
-    <!-- 导航栏 -->
     <nav>
         <ul>
             <li><a href="index.html" data-key="nav_home">首页</a></li>
@@ -169,7 +179,6 @@
     <p style="text-align: center; max-width: 800px; margin: 0 auto 20px;" data-key="page_sub">我们提供全日本包车服务，经验丰富的司机带您畅游经典景点</p>
 
     <div class="destinations-grid">
-        <!-- 东京 -->
         <div class="destination-card">
             <img src="https://source.unsplash.com/400x250/?tokyo,japan" alt="Tokyo">
             <div class="card-content">
@@ -178,7 +187,6 @@
                 <span class="tag" data-key="tag_duration">推荐游玩：2~3天</span>
             </div>
         </div>
-        <!-- 大阪 -->
         <div class="destination-card">
             <img src="https://source.unsplash.com/400x250/?osaka,japan" alt="Osaka">
             <div class="card-content">
@@ -187,7 +195,6 @@
                 <span class="tag" data-key="tag_duration">推荐游玩：2天</span>
             </div>
         </div>
-        <!-- 富士山 -->
         <div class="destination-card">
             <img src="https://source.unsplash.com/400x250/?mount-fuji,japan" alt="Fuji">
             <div class="card-content">
@@ -196,7 +203,6 @@
                 <span class="tag" data-key="tag_duration">推荐游玩：1~2天</span>
             </div>
         </div>
-        <!-- 北海道 -->
         <div class="destination-card">
             <img src="https://source.unsplash.com/400x250/?hokkaido,japan" alt="Hokkaido">
             <div class="card-content">
@@ -205,7 +211,6 @@
                 <span class="tag" data-key="tag_duration">推荐游玩：3~4天</span>
             </div>
         </div>
-        <!-- 京都 -->
         <div class="destination-card">
             <img src="https://source.unsplash.com/400x250/?kyoto,japan" alt="Kyoto">
             <div class="card-content">
@@ -214,7 +219,6 @@
                 <span class="tag" data-key="tag_duration">推荐游玩：2~3天</span>
             </div>
         </div>
-        <!-- 冲绳 -->
         <div class="destination-card">
             <img src="https://source.unsplash.com/400x250/?okinawa,japan" alt="Okinawa">
             <div class="card-content">
@@ -225,11 +229,16 @@
         </div>
     </div>
 
-    <!-- 包车+经验丰富 宣传条 -->
+    <!-- 联系方式区块 -->
+    <div class="contact-info">
+        <p>📞 <strong data-key="contact_phone">电话 / WhatsApp：</strong> <a href="tel:+8108088833615">080-8883-3615</a></p>
+        <p>✉️ <strong data-key="contact_email">邮箱：</strong> <a href="mailto:ywx822298@gmail.com">ywx822298@gmail.com</a></p>
+    </div>
+
     <div class="experience-banner">
         <h2 data-key="banner_title">🚐 安心包车，畅游日本</h2>
         <p data-key="banner_text">15年以上经验的专业司机 | 绿牌合法车辆 | 他加禄语/英语/日语/中文服务 | 可定制路线</p>
-        <a href="#" class="btn" data-key="banner_btn">立即预约包车</a>
+        <a href="mailto:ywx822298@gmail.com" class="btn" data-key="banner_btn">邮件预约包车</a>
     </div>
 
     <footer>
@@ -238,7 +247,6 @@
 </div>
 
 <script>
-    // 多语言字典（与首页保持一致，并补充目的地专用字段）
     const translations = {
         zh: {
             nav_home: "首页",
@@ -261,7 +269,9 @@
             tag_duration: "推荐游玩：",
             banner_title: "🚐 安心包车，畅游日本",
             banner_text: "15年以上经验的专业司机 | 绿牌合法车辆 | 他加禄语/英语/日语/中文服务 | 可定制路线",
-            banner_btn: "立即预约包车",
+            banner_btn: "邮件预约包车",
+            contact_phone: "电话 / WhatsApp：",
+            contact_email: "邮箱：",
             footer: "© 2025 日本快乐包车旅行 | 为菲律宾朋友打造安心的日本之旅"
         },
         en: {
@@ -285,7 +295,9 @@
             tag_duration: "Recommended stay: ",
             banner_title: "🚐 Worry-Free Charter, Explore Japan",
             banner_text: "15+ years experienced drivers | Licensed green-plate vehicles | Tagalog/English/Japanese/Chinese support | Custom routes",
-            banner_btn: "Book Charter Now",
+            banner_btn: "Email to Book Charter",
+            contact_phone: "Phone / WhatsApp:",
+            contact_email: "Email:",
             footer: "© 2025 Happy Charter Japan | Safe & enjoyable Japan tour for Filipino friends"
         },
         ja: {
@@ -309,7 +321,9 @@
             tag_duration: "おすすめ滞在：",
             banner_title: "🚐 安心チャーターで日本を満喫",
             banner_text: "15年以上の経験豊富なドライバー | 緑ナンバー車 | タガログ語・英語・日本語・中国語対応 | ルートカスタム可能",
-            banner_btn: "チャーター予約",
+            banner_btn: "メールで予約",
+            contact_phone: "電話 / WhatsApp：",
+            contact_email: "メール：",
             footer: "© 2025 ハッピーチャータージャパン | フィリピンの友人のための安心な日本旅行"
         }
     };
@@ -324,85 +338,35 @@
                 el.innerText = translations[lang][key];
             }
         });
-        // 特别处理 tag_duration 因为后面可能有数字，保留原数字部分（简单处理：如果 key 是 tag_duration，则追加原有数字）
-        // 为了保持"推荐游玩：2~3天"中的数字，我们用更精确的方式：每个标签原有数字会被覆盖，但我们可以先读取原始数字？
-        // 简便方案：在设置文本时，对于 tag_duration，我们重新拼接推荐天数（从原标签里提取天数部分）。但为了代码简单，上面的翻译已经包含了“推荐游玩：”字样，但天数需要额外保存。
-        // 改进：为每个标签单独设置 data-days，但为简洁，这里直接让翻译包含天数示例（统一写成2~3天示例）。用户可自行微调。
-        // 由于destinations-grid中有多个tag_duration，我们手动修正每个卡片的天数：
+        // 处理推荐游玩天数（保持原有数字）
         const daysMap = {
-            'dest_tokyo_title': '2~3天',
-            'dest_osaka_title': '2天',
-            'dest_fuji_title': '1~2天',
-            'dest_hokkaido_title': '3~4天',
-            'dest_kyoto_title': '2~3天',
-            'dest_okinawa_title': '3天'
+            'dest_tokyo_title': { zh: '2~3天', en: '2~3 days', ja: '2〜3日' },
+            'dest_osaka_title': { zh: '2天', en: '2 days', ja: '2日' },
+            'dest_fuji_title': { zh: '1~2天', en: '1~2 days', ja: '1〜2日' },
+            'dest_hokkaido_title': { zh: '3~4天', en: '3~4 days', ja: '3〜4日' },
+            'dest_kyoto_title': { zh: '2~3天', en: '2~3 days', ja: '2〜3日' },
+            'dest_okinawa_title': { zh: '3天', en: '3 days', ja: '3日' }
         };
-        if (lang === 'zh') {
-            document.querySelectorAll('.tag').forEach((tag, idx) => {
-                const parentCard = tag.closest('.destination-card');
-                if (parentCard) {
-                    const titleElem = parentCard.querySelector('h3');
-                    let key = '';
-                    if (titleElem.innerText.includes('东京')) key = 'dest_tokyo_title';
-                    else if (titleElem.innerText.includes('大阪')) key = 'dest_osaka_title';
-                    else if (titleElem.innerText.includes('富士山')) key = 'dest_fuji_title';
-                    else if (titleElem.innerText.includes('北海道')) key = 'dest_hokkaido_title';
-                    else if (titleElem.innerText.includes('京都')) key = 'dest_kyoto_title';
-                    else if (titleElem.innerText.includes('冲绳')) key = 'dest_okinawa_title';
-                    if (daysMap[key]) tag.innerText = '推荐游玩：' + daysMap[key];
+        document.querySelectorAll('.tag').forEach(tag => {
+            const card = tag.closest('.destination-card');
+            if (card) {
+                const titleElem = card.querySelector('h3');
+                let key = '';
+                if (titleElem.innerText.includes('东京') || titleElem.innerText.includes('Tokyo') || titleElem.innerText.includes('東京')) key = 'dest_tokyo_title';
+                else if (titleElem.innerText.includes('大阪') || titleElem.innerText.includes('Osaka')) key = 'dest_osaka_title';
+                else if (titleElem.innerText.includes('富士山') || titleElem.innerText.includes('Mount Fuji')) key = 'dest_fuji_title';
+                else if (titleElem.innerText.includes('北海道') || titleElem.innerText.includes('Hokkaido')) key = 'dest_hokkaido_title';
+                else if (titleElem.innerText.includes('京都') || titleElem.innerText.includes('Kyoto')) key = 'dest_kyoto_title';
+                else if (titleElem.innerText.includes('冲绳') || titleElem.innerText.includes('Okinawa') || titleElem.innerText.includes('沖縄')) key = 'dest_okinawa_title';
+                if (daysMap[key] && daysMap[key][lang]) {
+                    const prefix = (lang === 'zh' ? '推荐游玩：' : (lang === 'en' ? 'Recommended stay: ' : 'おすすめ滞在：'));
+                    tag.innerText = prefix + daysMap[key][lang];
                 }
-            });
-        } else if (lang === 'en') {
-            const daysEn = {
-                'dest_tokyo_title': '2~3 days',
-                'dest_osaka_title': '2 days',
-                'dest_fuji_title': '1~2 days',
-                'dest_hokkaido_title': '3~4 days',
-                'dest_kyoto_title': '2~3 days',
-                'dest_okinawa_title': '3 days'
-            };
-            document.querySelectorAll('.tag').forEach((tag, idx) => {
-                const parentCard = tag.closest('.destination-card');
-                if (parentCard) {
-                    const titleElem = parentCard.querySelector('h3');
-                    let key = '';
-                    if (titleElem.innerText.includes('Tokyo')) key = 'dest_tokyo_title';
-                    else if (titleElem.innerText.includes('Osaka')) key = 'dest_osaka_title';
-                    else if (titleElem.innerText.includes('Mount Fuji')) key = 'dest_fuji_title';
-                    else if (titleElem.innerText.includes('Hokkaido')) key = 'dest_hokkaido_title';
-                    else if (titleElem.innerText.includes('Kyoto')) key = 'dest_kyoto_title';
-                    else if (titleElem.innerText.includes('Okinawa')) key = 'dest_okinawa_title';
-                    if (daysEn[key]) tag.innerText = 'Recommended stay: ' + daysEn[key];
-                }
-            });
-        } else if (lang === 'ja') {
-            const daysJa = {
-                'dest_tokyo_title': '2〜3日',
-                'dest_osaka_title': '2日',
-                'dest_fuji_title': '1〜2日',
-                'dest_hokkaido_title': '3〜4日',
-                'dest_kyoto_title': '2〜3日',
-                'dest_okinawa_title': '3日'
-            };
-            document.querySelectorAll('.tag').forEach((tag, idx) => {
-                const parentCard = tag.closest('.destination-card');
-                if (parentCard) {
-                    const titleElem = parentCard.querySelector('h3');
-                    let key = '';
-                    if (titleElem.innerText.includes('東京')) key = 'dest_tokyo_title';
-                    else if (titleElem.innerText.includes('大阪')) key = 'dest_osaka_title';
-                    else if (titleElem.innerText.includes('富士山')) key = 'dest_fuji_title';
-                    else if (titleElem.innerText.includes('北海道')) key = 'dest_hokkaido_title';
-                    else if (titleElem.innerText.includes('京都')) key = 'dest_kyoto_title';
-                    else if (titleElem.innerText.includes('沖縄')) key = 'dest_okinawa_title';
-                    if (daysJa[key]) tag.innerText = 'おすすめ滞在：' + daysJa[key];
-                }
-            });
-        }
+            }
+        });
         localStorage.setItem('travel_site_lang', lang);
     }
 
-    // 加载保存的语言
     const savedLang = localStorage.getItem('travel_site_lang');
     if (savedLang && translations[savedLang]) {
         setLanguage(savedLang);
