@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>目的地 | 日本包车旅游 - 菲律宾游客首选</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #fef9f0;
+            color: #2c3e2f;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .lang-btn {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .lang-btn:hover {
+            background: #d35400;
+        }
+        nav {
+            background: #2c3e2f;
+            color: white;
+            padding: 15px 0;
+            border-radius: 40px;
+            margin-bottom: 30px;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 40px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+            margin: 30px 0 20px;
+            font-size: 2.5rem;
+            color: #e67e22;
+        }
+        .destinations-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        .destination-card {
+            background: white;
+            width: 280px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+        .destination-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-content h3 {
+            color: #e67e22;
+            margin-bottom: 10px;
+        }
+        .card-content p {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        .tag {
+            display: inline-block;
+            background: #2c3e2f;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+        .experience-banner {
+            background: #2c3e2f;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            border-radius: 50px;
+            margin: 50px 0;
+        }
+        .experience-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background: #2c3e2f;
+            color: white;
+            border-radius: 30px;
+        }
+        @media (max-width: 768px) {
+            nav ul { gap: 20px; flex-wrap: wrap; }
+            h1 { font-size: 1.8rem; }
+            .destination-card { width: 100%; max-width: 350px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 语言切换 -->
+    <div class="lang-switch">
+        <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
+        <button class="lang-btn" onclick="setLanguage('en')">English</button>
+        <button class="lang-btn" onclick="setLanguage('zh')">中文</button>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="index.html" data-key="nav_home">首页</a></li>
+            <li><a href="destinations.html" data-key="nav_destinations">目的地</a></li>
+            <li><a href="#" data-key="nav_contact">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <h1 data-key="page_title">热门目的地</h1>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 20px;" data-key="page_sub">我们提供全日本包车服务，经验丰富的司机带您畅游经典景点</p>
+
+    <div class="destinations-grid">
+        <!-- 东京 -->
+        <div class="destination-card">
+            <img src="https://source.unsplash.com/400x250/?tokyo,japan" alt="Tokyo">
+            <div class="card-content">
+                <h3 data-key="dest_tokyo_title">🗼 东京</h3>
+                <p data-key="dest_tokyo_desc">浅草寺、涩谷、迪士尼乐园。现代与传统的完美融合。</p>
+                <span class="tag" data-key="tag_duration">推荐游玩：2~3天</span>
+            </div>
+        </div>
+        <!-- 大阪 -->
+        <div class="destination-card">
+            <img src="https://source.unsplash.com/400x250/?osaka,japan" alt="Osaka">
+            <div class="card-content">
+                <h3 data-key="dest_osaka_title">🏯 大阪</h3>
+                <p data-key="dest_osaka_desc">道顿堀美食、环球影城、大阪城公园。</p>
+                <span class="tag" data-key="tag_duration">推荐游玩：2天</span>
+            </div>
+        </div>
+        <!-- 富士山 -->
+        <div class="destination-card">
+            <img src="https://source.unsplash.com/400x250/?mount-fuji,japan" alt="Fuji">
+            <div class="card-content">
+                <h3 data-key="dest_fuji_title">🗻 富士山</h3>
+                <p data-key="dest_fuji_desc">河口湖、五合目、忍野八海。绝美自然风光。</p>
+                <span class="tag" data-key="tag_duration">推荐游玩：1~2天</span>
+            </div>
+        </div>
+        <!-- 北海道 -->
+        <div class="destination-card">
+            <img src="https://source.unsplash.com/400x250/?hokkaido,japan" alt="Hokkaido">
+            <div class="card-content">
+                <h3 data-key="dest_hokkaido_title">❄️ 北海道</h3>
+                <p data-key="dest_hokkaido_desc">滑雪、温泉、富良野花田。四季皆宜。</p>
+                <span class="tag" data-key="tag_duration">推荐游玩：3~4天</span>
+            </div>
+        </div>
+        <!-- 京都 -->
+        <div class="destination-card">
+            <img src="https://source.unsplash.com/400x250/?kyoto,japan" alt="Kyoto">
+            <div class="card-content">
+                <h3 data-key="dest_kyoto_title">⛩️ 京都</h3>
+                <p data-key="dest_kyoto_desc">伏见稻荷大社、清水寺、岚山竹林。</p>
+                <span class="tag" data-key="tag_duration">推荐游玩：2~3天</span>
+            </div>
+        </div>
+        <!-- 冲绳 -->
+        <div class="destination-card">
+            <img src="https://source.unsplash.com/400x250/?okinawa,japan" alt="Okinawa">
+            <div class="card-content">
+                <h3 data-key="dest_okinawa_title">🏝️ 冲绳</h3>
+                <p data-key="dest_okinawa_desc">美丽海水族馆、沙滩、琉球文化。</p>
+                <span class="tag" data-key="tag_duration">推荐游玩：3天</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 包车+经验丰富 宣传条 -->
+    <div class="experience-banner">
+        <h2 data-key="banner_title">🚐 安心包车，畅游日本</h2>
+        <p data-key="banner_text">15年以上经验的专业司机 | 绿牌合法车辆 | 他加禄语/英语/日语/中文服务 | 可定制路线</p>
+        <a href="#" class="btn" data-key="banner_btn">立即预约包车</a>
+    </div>
+
+    <footer>
+        <p data-key="footer">© 2025 日本快乐包车旅行 | 为菲律宾朋友打造安心的日本之旅</p>
+    </footer>
+</div>
+
+<script>
+    // 多语言字典（与首页保持一致，并补充目的地专用字段）
+    const translations = {
+        zh: {
+            nav_home: "首页",
+            nav_destinations: "目的地",
+            nav_contact: "联系我们",
+            page_title: "热门目的地",
+            page_sub: "我们提供全日本包车服务，经验丰富的司机带您畅游经典景点",
+            dest_tokyo_title: "🗼 东京",
+            dest_tokyo_desc: "浅草寺、涩谷、迪士尼乐园。现代与传统的完美融合。",
+            dest_osaka_title: "🏯 大阪",
+            dest_osaka_desc: "道顿堀美食、环球影城、大阪城公园。",
+            dest_fuji_title: "🗻 富士山",
+            dest_fuji_desc: "河口湖、五合目、忍野八海。绝美自然风光。",
+            dest_hokkaido_title: "❄️ 北海道",
+            dest_hokkaido_desc: "滑雪、温泉、富良野花田。四季皆宜。",
+            dest_kyoto_title: "⛩️ 京都",
+            dest_kyoto_desc: "伏见稻荷大社、清水寺、岚山竹林。",
+            dest_okinawa_title: "🏝️ 冲绳",
+            dest_okinawa_desc: "美丽海水族馆、沙滩、琉球文化。",
+            tag_duration: "推荐游玩：",
+            banner_title: "🚐 安心包车，畅游日本",
+            banner_text: "15年以上经验的专业司机 | 绿牌合法车辆 | 他加禄语/英语/日语/中文服务 | 可定制路线",
+            banner_btn: "立即预约包车",
+            footer: "© 2025 日本快乐包车旅行 | 为菲律宾朋友打造安心的日本之旅"
+        },
+        en: {
+            nav_home: "Home",
+            nav_destinations: "Destinations",
+            nav_contact: "Contact",
+            page_title: "Popular Destinations",
+            page_sub: "We offer charter services across Japan. Experienced drivers take you to classic spots.",
+            dest_tokyo_title: "🗼 Tokyo",
+            dest_tokyo_desc: "Sensoji, Shibuya, Disneyland. Perfect blend of modern and tradition.",
+            dest_osaka_title: "🏯 Osaka",
+            dest_osaka_desc: "Dotonbori food, Universal Studios, Osaka Castle Park.",
+            dest_fuji_title: "🗻 Mount Fuji",
+            dest_fuji_desc: "Lake Kawaguchi, 5th Station, Oshino Hakkai. Stunning nature.",
+            dest_hokkaido_title: "❄️ Hokkaido",
+            dest_hokkaido_desc: "Skiing, hot springs, Furano flower fields. Beautiful all year.",
+            dest_kyoto_title: "⛩️ Kyoto",
+            dest_kyoto_desc: "Fushimi Inari, Kiyomizu-dera, Arashiyama bamboo forest.",
+            dest_okinawa_title: "🏝️ Okinawa",
+            dest_okinawa_desc: "Churaumi Aquarium, beaches, Ryukyu culture.",
+            tag_duration: "Recommended stay: ",
+            banner_title: "🚐 Worry-Free Charter, Explore Japan",
+            banner_text: "15+ years experienced drivers | Licensed green-plate vehicles | Tagalog/English/Japanese/Chinese support | Custom routes",
+            banner_btn: "Book Charter Now",
+            footer: "© 2025 Happy Charter Japan | Safe & enjoyable Japan tour for Filipino friends"
+        },
+        ja: {
+            nav_home: "ホーム",
+            nav_destinations: "目的地",
+            nav_contact: "お問い合わせ",
+            page_title: "人気の目的地",
+            page_sub: "日本全国チャーターサービス。経験豊富なドライバーが名所をご案内します。",
+            dest_tokyo_title: "🗼 東京",
+            dest_tokyo_desc: "浅草、渋谷、ディズニーランド。近代と伝統の融合。",
+            dest_osaka_title: "🏯 大阪",
+            dest_osaka_desc: "道頓堀グルメ、USJ、大阪城公園。",
+            dest_fuji_title: "🗻 富士山",
+            dest_fuji_desc: "河口湖、五合目、忍野八海。絶景の自然。",
+            dest_hokkaido_title: "❄️ 北海道",
+            dest_hokkaido_desc: "スキー、温泉、富良野の花畑。四季を通じて魅力的。",
+            dest_kyoto_title: "⛩️ 京都",
+            dest_kyoto_desc: "伏見稲荷、清水寺、嵐山竹林。",
+            dest_okinawa_title: "🏝️ 沖縄",
+            dest_okinawa_desc: "美ら海水族館、ビーチ、琉球文化。",
+            tag_duration: "おすすめ滞在：",
+            banner_title: "🚐 安心チャーターで日本を満喫",
+            banner_text: "15年以上の経験豊富なドライバー | 緑ナンバー車 | タガログ語・英語・日本語・中国語対応 | ルートカスタム可能",
+            banner_btn: "チャーター予約",
+            footer: "© 2025 ハッピーチャータージャパン | フィリピンの友人のための安心な日本旅行"
+        }
+    };
+
+    let currentLang = 'zh';
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (translations[lang][key]) {
+                el.innerText = translations[lang][key];
+            }
+        });
+        // 特别处理 tag_duration 因为后面可能有数字，保留原数字部分（简单处理：如果 key 是 tag_duration，则追加原有数字）
+        // 为了保持"推荐游玩：2~3天"中的数字，我们用更精确的方式：每个标签原有数字会被覆盖，但我们可以先读取原始数字？
+        // 简便方案：在设置文本时，对于 tag_duration，我们重新拼接推荐天数（从原标签里提取天数部分）。但为了代码简单，上面的翻译已经包含了“推荐游玩：”字样，但天数需要额外保存。
+        // 改进：为每个标签单独设置 data-days，但为简洁，这里直接让翻译包含天数示例（统一写成2~3天示例）。用户可自行微调。
+        // 由于destinations-grid中有多个tag_duration，我们手动修正每个卡片的天数：
+        const daysMap = {
+            'dest_tokyo_title': '2~3天',
+            'dest_osaka_title': '2天',
+            'dest_fuji_title': '1~2天',
+            'dest_hokkaido_title': '3~4天',
+            'dest_kyoto_title': '2~3天',
+            'dest_okinawa_title': '3天'
+        };
+        if (lang === 'zh') {
+            document.querySelectorAll('.tag').forEach((tag, idx) => {
+                const parentCard = tag.closest('.destination-card');
+                if (parentCard) {
+                    const titleElem = parentCard.querySelector('h3');
+                    let key = '';
+                    if (titleElem.innerText.includes('东京')) key = 'dest_tokyo_title';
+                    else if (titleElem.innerText.includes('大阪')) key = 'dest_osaka_title';
+                    else if (titleElem.innerText.includes('富士山')) key = 'dest_fuji_title';
+                    else if (titleElem.innerText.includes('北海道')) key = 'dest_hokkaido_title';
+                    else if (titleElem.innerText.includes('京都')) key = 'dest_kyoto_title';
+                    else if (titleElem.innerText.includes('冲绳')) key = 'dest_okinawa_title';
+                    if (daysMap[key]) tag.innerText = '推荐游玩：' + daysMap[key];
+                }
+            });
+        } else if (lang === 'en') {
+            const daysEn = {
+                'dest_tokyo_title': '2~3 days',
+                'dest_osaka_title': '2 days',
+                'dest_fuji_title': '1~2 days',
+                'dest_hokkaido_title': '3~4 days',
+                'dest_kyoto_title': '2~3 days',
+                'dest_okinawa_title': '3 days'
+            };
+            document.querySelectorAll('.tag').forEach((tag, idx) => {
+                const parentCard = tag.closest('.destination-card');
+                if (parentCard) {
+                    const titleElem = parentCard.querySelector('h3');
+                    let key = '';
+                    if (titleElem.innerText.includes('Tokyo')) key = 'dest_tokyo_title';
+                    else if (titleElem.innerText.includes('Osaka')) key = 'dest_osaka_title';
+                    else if (titleElem.innerText.includes('Mount Fuji')) key = 'dest_fuji_title';
+                    else if (titleElem.innerText.includes('Hokkaido')) key = 'dest_hokkaido_title';
+                    else if (titleElem.innerText.includes('Kyoto')) key = 'dest_kyoto_title';
+                    else if (titleElem.innerText.includes('Okinawa')) key = 'dest_okinawa_title';
+                    if (daysEn[key]) tag.innerText = 'Recommended stay: ' + daysEn[key];
+                }
+            });
+        } else if (lang === 'ja') {
+            const daysJa = {
+                'dest_tokyo_title': '2〜3日',
+                'dest_osaka_title': '2日',
+                'dest_fuji_title': '1〜2日',
+                'dest_hokkaido_title': '3〜4日',
+                'dest_kyoto_title': '2〜3日',
+                'dest_okinawa_title': '3日'
+            };
+            document.querySelectorAll('.tag').forEach((tag, idx) => {
+                const parentCard = tag.closest('.destination-card');
+                if (parentCard) {
+                    const titleElem = parentCard.querySelector('h3');
+                    let key = '';
+                    if (titleElem.innerText.includes('東京')) key = 'dest_tokyo_title';
+                    else if (titleElem.innerText.includes('大阪')) key = 'dest_osaka_title';
+                    else if (titleElem.innerText.includes('富士山')) key = 'dest_fuji_title';
+                    else if (titleElem.innerText.includes('北海道')) key = 'dest_hokkaido_title';
+                    else if (titleElem.innerText.includes('京都')) key = 'dest_kyoto_title';
+                    else if (titleElem.innerText.includes('沖縄')) key = 'dest_okinawa_title';
+                    if (daysJa[key]) tag.innerText = 'おすすめ滞在：' + daysJa[key];
+                }
+            });
+        }
+        localStorage.setItem('travel_site_lang', lang);
+    }
+
+    // 加载保存的语言
+    const savedLang = localStorage.getItem('travel_site_lang');
+    if (savedLang && translations[savedLang]) {
+        setLanguage(savedLang);
+    } else {
+        setLanguage('zh');
+    }
+</script>
+</body>
+</html>
